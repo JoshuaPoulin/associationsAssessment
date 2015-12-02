@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  .well.well-lg
+    form.form-inline
+      .form-group
+        label(for='exampleInputName2') Item Name
+        input#exampleInputName2.form-control(type='text', placeholder='Item Name')
+      .form-group
+        .dropdown
+          button#dropdownMenu1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+            | Raid
+            span.caret
+          ul.dropdown-menu(aria-labelledby='dropdownMenu1')
+            li
+              a(href='#', data-value='action') Sunwell
+      button.btn.btn-default(type='submit') Submit
+
+  h1.pageheader.text-center=showVariable[0].name
+  table.table.table-striped
+    thead
+      tr
+        td.text-center.text-info Loot
+    tbody
+      for index in lootVariable
+        tr
+          td=index.item

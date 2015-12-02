@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  h1.pageheader.text-center Vindicatum
+  table.table.table-striped
+    thead
+      tr
+        th.text-center.text-info Members
+    tbody
+      for index in horse
+        tr
+          td
+            a(href="/members/#{index._id}")=index.name
